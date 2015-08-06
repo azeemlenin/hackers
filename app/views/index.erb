@@ -1,0 +1,13 @@
+<div class="container">
+  <center><h1>FAKERS NEWS</h1>
+
+  Your daily source of juicy gossips from Kepochi</center><br>
+
+  <hr>
+  <h3>Overall posts</h3>
+  <% @post.each do |x| %>
+  <%= x.title %><br>
+  <% end %>
+  <hr>
+  <center><a href="/login">Log In</a> | <a href="/sign_up">Sign Up</a></center>
+</div>

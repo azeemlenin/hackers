@@ -1,0 +1,43 @@
+<div class="container">
+  <center><h1>FAKERS NEWS</h1>
+
+  Your daily source of juicy gossips from Kepochi</center><br>
+
+  <hr>
+  <h2>Welcome to your profile, <%= @user.name %>!</h2>
+  This is your email: <b><u><%= @user.email %></b></u><br><br>
+
+  <hr>
+
+  <center>The post by <%= @post.user.name %>
+ <h2><%= @post.title %></h2>
+
+ <%= @post.body %></center><br>
+<hr>
+Comments from others about your post:<br><br>
+<div id="comment-out">
+<% @comments.each do |x| %>
+<%= x.body %> [posted by <%= x.user.name %>]<br><br>
+<% end %>
+</div>
+
+<br><br>
+<form id="comment-form" action="/create_comment" method="post">
+
+    Comment<br>
+    <textarea name="comment[body]" placeholder="I want to hear your opinion about this"></textarea>
+    <input type="hidden" name="comment[post_id]" value=<%= @post.id %>>
+    <input type="hidden" name="comment[user_id]" value=<%= @user.id %>>
+    <input id="anak"  id="comment-form-button" type="submit" value="Comment!"><br><br>
+
+  </form>
+
+
+
+<hr>
+  <a href="/user_page">Back</a>
+
+
+
+
+  </div>

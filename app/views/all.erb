@@ -1,0 +1,36 @@
+<div class="container">
+  <center><h1>FAKERS NEWS</h1>
+
+  Your daily source of juicy gossips from Kepochi</center><br>
+
+  <hr>
+  <h2>Welcome to the HOMEPAGE, <%= @user.name %>!</h2>
+  This is your email: <b><u><%= @user.email %></b></u><br><br>
+
+  <hr>
+  <% i = 1 %>
+  <% if @post.empty? %>
+  Looks like we have nothing
+  <% else %>
+  <%   @post.each do |x| %>
+  <%= "#{i}. " %> <a href=<%= "/post/#{x.id}" %>> <%= x.title %></a><br>
+  <% i += 1 %>
+  <%   end %>
+  <% end%>
+
+  <hr>
+
+  <center><form action="/user_page" method="get">
+    <button id="anak" type="submit">Go to my page</button>
+  </form><br>
+
+  <form action="/create_post" method="get">
+    <button id="anak" type="submit">Create post</button>
+  </form><br>
+
+  <form action="/logout" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button id="anak" type="submit">Logout</button>
+  </form></center>
+
+</div>

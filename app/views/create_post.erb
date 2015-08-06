@@ -1,0 +1,24 @@
+<div class="container">
+  <center><h1>FAKERS NEWS</h1>
+
+  Your daily source of juicy gossips from Kepochi</center><br>
+
+  <hr>
+  This is your email: <b><u><%= @user.email %></b></u><br>
+
+  <hr>
+  <h2>Creating new post</h2>
+  <form action="/create_post" method="post">
+
+    Title<br>
+    <input type="text" name="post[title]" placeholder="e.g. My First Time" data-validation="required" data-validation-error-msg="Please enter the title"><br><br>
+    Body<br>
+    <textarea name="post[body]" placeholder="e.g. This is how it started" data-validation="required" data-validation-error-msg="Don't be lazy, fill my body!"></textarea>
+
+    <input id="anak" type="submit" value="Create post"><br><br>
+
+  </form>
+
+  <hr>
+  <a href="/user_page">Back</a>
+</div>
